@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../color/color_app.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../color/color_app.dart';
 import '../../providers/app_config_provider.dart';
 
 class SebhaTab extends StatefulWidget {
+  const SebhaTab({super.key});
+
   @override
   State<SebhaTab> createState() => _SebhaTabState();
 }
@@ -34,7 +37,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
     return Column(
       children: [
-        Container(
+        SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.36,
             child: Stack(
@@ -55,7 +58,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 InkWell(
                   onTap: incrementCounter,
                   child: AnimatedRotation(
-                    duration: Duration(milliseconds: 65),
+                    duration: const Duration(milliseconds: 65),
                     turns: turn,
                     child: provider.isDark()
                         ? Image.asset('assets/images/body_seb7a_dark.png',
@@ -66,14 +69,14 @@ class _SebhaTabState extends State<SebhaTab> {
                 ),
               ],
             )),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
           AppLocalizations.of(context)!.number_of_Tasbeehs,
           style: Theme.of(context).textTheme.bodySmall,
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Container(
@@ -97,7 +100,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 : Theme.of(context).textTheme.bodySmall,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         InkWell(
@@ -114,7 +117,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   : ColorApp.kPrimryeColor.withOpacity(0.6),
             ),
             child: Text(
-              '${phrases[phraseIndex]}',
+              phrases[phraseIndex],
               style: provider.isDark()
                   ? Theme.of(context)
                       .textTheme
@@ -124,7 +127,7 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
       ],

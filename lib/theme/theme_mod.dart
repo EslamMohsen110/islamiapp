@@ -4,7 +4,7 @@ import 'package:islamii_aapp/color/color_app.dart';
 class ThemeMod {
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: ColorApp.kBlackColor,
       unselectedItemColor: ColorApp.kWhiteColor,
     ),
@@ -42,7 +42,7 @@ class ThemeMod {
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: ColorApp.kyellowColor,
       unselectedItemColor: ColorApp.kWhiteColor,
     ),

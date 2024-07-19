@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamii_aapp/color/color_app.dart';
 import 'package:islamii_aapp/home/ahdeth/ahadeth_tab.dart';
 import 'package:islamii_aapp/home/quran/quran_tab.dart';
 import 'package:islamii_aapp/home/radio/radio_tab.dart';
 import 'package:islamii_aapp/home/sebha/sebha_tab.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamii_aapp/home/setting/setting_tab.dart';
 import 'package:islamii_aapp/providers/app_config_provider.dart';
 import 'package:provider/provider.dart';
@@ -22,10 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   List<Widget> widgetList = [
     QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    RadioTab(),
-    SettingTab()
+    const AhadethTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const SettingTab()
   ];
 
   void onPressed(int value) {
@@ -67,32 +67,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: provider.isDark()
                     ? ColorApp.kPrimryDarkColor
                     : ColorApp.kPrimryeColor,
-                icon: ImageIcon(AssetImage('assets/images/quran.png')),
+                icon: const ImageIcon(AssetImage('assets/images/quran.png')),
                 label: AppLocalizations.of(context)!.quran,
               ),
               BottomNavigationBarItem(
                   backgroundColor: provider.isDark()
                       ? ColorApp.kPrimryDarkColor
                       : ColorApp.kPrimryeColor,
-                  icon: ImageIcon(AssetImage('assets/images/hadeth.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
                   label: AppLocalizations.of(context)!.ahadeth),
               BottomNavigationBarItem(
                   backgroundColor: provider.isDark()
                       ? ColorApp.kPrimryDarkColor
                       : ColorApp.kPrimryeColor,
-                  icon: ImageIcon(AssetImage('assets/images/sebha.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/sebha.png')),
                   label: AppLocalizations.of(context)!.sebha),
               BottomNavigationBarItem(
                   backgroundColor: provider.isDark()
                       ? ColorApp.kPrimryDarkColor
                       : ColorApp.kPrimryeColor,
-                  icon: ImageIcon(AssetImage('assets/images/radio.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/radio.png')),
                   label: AppLocalizations.of(context)!.radio),
               BottomNavigationBarItem(
                   backgroundColor: provider.isDark()
                       ? ColorApp.kPrimryDarkColor
                       : ColorApp.kPrimryeColor,
-                  icon: Icon(Icons.settings),
+                  icon: const Icon(Icons.settings),
                   label: AppLocalizations.of(context)!.settings)
             ],
           ),

@@ -31,7 +31,7 @@ class _ItemSettingState extends State<ItemSetting> {
                   ? selectedLanguage(AppLocalizations.of(context)!.english)
                   : unSelectedLanguage(AppLocalizations.of(context)!.english),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             InkWell(
@@ -59,7 +59,7 @@ class _ItemSettingState extends State<ItemSetting> {
               .titleSmall!
               .copyWith(color: ColorApp.kPrimryeColor),
         ),
-        Icon(Icons.check, size: 25, color: ColorApp.kPrimryeColor)
+        const Icon(Icons.check, size: 25, color: ColorApp.kPrimryeColor)
       ],
     );
   }

@@ -31,7 +31,7 @@ class _ItemSettingState extends State<ItemThemeSetting> {
                   ? unSelectedTheme(AppLocalizations.of(context)!.light)
                   : selectedTheme(AppLocalizations.of(context)!.light),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             InkWell(
@@ -59,7 +59,7 @@ class _ItemSettingState extends State<ItemThemeSetting> {
               .titleSmall!
               .copyWith(color: ColorApp.kPrimryeColor),
         ),
-        Icon(Icons.check, size: 25, color: ColorApp.kPrimryeColor)
+        const Icon(Icons.check, size: 25, color: ColorApp.kPrimryeColor)
       ],
     );
   }

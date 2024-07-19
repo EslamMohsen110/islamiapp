@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamii_aapp/home/ahdeth/ahadeth_screen.dart';
 import 'package:islamii_aapp/home/quran/quran_screen.dart';
 import 'package:islamii_aapp/home_screen.dart';
 import 'package:islamii_aapp/providers/app_config_provider.dart';
 import 'package:islamii_aapp/theme/theme_mod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeMod.darkTheme,
       initialRoute: HomeScreen.routeName,
       routes: {
-        QuranScreen.routeName: (context) => QuranScreen(),
-        HomeScreen.routeName: (context) => HomeScreen(),
-        AhadethScreen.routeName: (context) => AhadethScreen(),
+        QuranScreen.routeName: (context) => const QuranScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        AhadethScreen.routeName: (context) => const AhadethScreen(),
       },
     );
   }

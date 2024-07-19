@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islamii_aapp/color/color_app.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamii_aapp/color/color_app.dart';
 import 'package:islamii_aapp/home/setting/item_setting.dart';
 import 'package:islamii_aapp/home/setting/item_theme_setting.dart';
 import 'package:islamii_aapp/providers/app_config_provider.dart';
@@ -26,11 +26,11 @@ class _SettingTabState extends State<SettingTab> {
             AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: ColorApp.kPrimryeColor,
               borderRadius: BorderRadius.circular(20),
@@ -48,7 +48,7 @@ class _SettingTabState extends State<SettingTab> {
                         : AppLocalizations.of(context)!.arabic,
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_drop_down,
                     size: 25,
                   )
@@ -56,18 +56,18 @@ class _SettingTabState extends State<SettingTab> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Text(
             AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: ColorApp.kPrimryeColor,
               borderRadius: BorderRadius.circular(20),
@@ -85,7 +85,7 @@ class _SettingTabState extends State<SettingTab> {
                         : AppLocalizations.of(context)!.dark,
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_drop_down,
                     size: 25,
                   )
@@ -101,14 +101,14 @@ class _SettingTabState extends State<SettingTab> {
   void showLanguageBottomSheetMethod() {
     showModalBottomSheet(
       context: context,
-      builder: (context) => ItemSetting(),
+      builder: (context) => const ItemSetting(),
     );
   }
 
   void showThemeBottomSheetMethod() {
     showModalBottomSheet(
       context: context,
-      builder: (context) => ItemThemeSetting(),
+      builder: (context) => const ItemThemeSetting(),
     );
   }
 }
