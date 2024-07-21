@@ -56,7 +56,7 @@ class _ItemSettingState extends State<ItemThemeSetting> {
           text,
           style: Theme.of(context)
               .textTheme
-              .titleSmall!
+              .headlineMedium!
               .copyWith(color: ColorApp.kPrimryeColor),
         ),
         const Icon(Icons.check, size: 25, color: ColorApp.kPrimryeColor)
@@ -68,7 +68,7 @@ class _ItemSettingState extends State<ItemThemeSetting> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(text, style: Theme.of(context).textTheme.titleSmall),
+        Text(text, style: Theme.of(context).textTheme.headlineMedium),
       ],
     );
   }

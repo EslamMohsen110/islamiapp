@@ -24,7 +24,7 @@ class _SettingTabState extends State<SettingTab> {
         children: [
           Text(
             AppLocalizations.of(context)!.language,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(
             height: 5,
@@ -46,7 +46,7 @@ class _SettingTabState extends State<SettingTab> {
                     provider.language == 'en'
                         ? AppLocalizations.of(context)!.english
                         : AppLocalizations.of(context)!.arabic,
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const Icon(
                     Icons.arrow_drop_down,
@@ -61,7 +61,7 @@ class _SettingTabState extends State<SettingTab> {
           ),
           Text(
             AppLocalizations.of(context)!.theme,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(
             height: 5,
@@ -83,7 +83,7 @@ class _SettingTabState extends State<SettingTab> {
                     provider.themeMode == ThemeMode.light
                         ? AppLocalizations.of(context)!.light
                         : AppLocalizations.of(context)!.dark,
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const Icon(
                     Icons.arrow_drop_down,

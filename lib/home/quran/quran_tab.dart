@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islamii_aapp/home/quran/item_quran_name.dart';
-import '../../color/color_app.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamii_aapp/home/quran/item_quran_name.dart';
+
+import '../../color/color_app.dart';
 
 class QuranTab extends StatelessWidget {
   static const String routeName = 'QuranTab';
@@ -139,7 +140,7 @@ class QuranTab extends StatelessWidget {
         ),
         Text(
           AppLocalizations.of(context)!.sura_name,
-          style: Theme.of(context).textTheme.bodySmall,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Divider(
           color: ColorApp.kPrimryeColor,

@@ -13,7 +13,7 @@ class RadioTab extends StatelessWidget {
         Image.asset('assets/images/radio_icon.png'),
         Text(
           'أذاعة القران الكريم',
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Spacer(),
         Row(
