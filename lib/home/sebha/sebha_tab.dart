@@ -5,127 +5,110 @@ import 'package:provider/provider.dart';
 import '../../color/color_app.dart';
 import '../../providers/app_config_provider.dart';
 
-class SebhaTab extends StatefulWidget {
+class SebhaTab extends StatelessWidget {
   const SebhaTab({super.key});
-
-  @override
-  State<SebhaTab> createState() => _SebhaTabState();
-}
-
-class _SebhaTabState extends State<SebhaTab> {
-  double turn = 0.4;
-  int counter = 1;
-  int phraseIndex = 0;
-  List<String> phrases = ['سبحان الله', 'الحمد لله', 'الله أكبر'];
-
-  void incrementCounter() {
-    setState(
-      () {
-        counter++;
-        turn++;
-        if (counter == 34) {
-          counter = 1;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
 
-    return Column(
-      children: [
-        SizedBox(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.36,
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Positioned(
-                    top: 1,
-                    right: 140,
-                    child: provider.isDark()
-                        ? Image.asset(
-                            'assets/images/head_seb7a_dark.png',
-                            fit: BoxFit.cover,
-                          )
-                        : Image.asset(
-                            'assets/images/head_sebha_icon.png',
-                            fit: BoxFit.cover,
-                          )),
-                InkWell(
-                  onTap: incrementCounter,
-                  child: AnimatedRotation(
-                    duration: const Duration(milliseconds: 65),
-                    turns: turn,
-                    child: provider.isDark()
-                        ? Image.asset('assets/images/body_seb7a_dark.png',
-                            fit: BoxFit.cover)
-                        : Image.asset('assets/images/sebha_icon.png',
-                            fit: BoxFit.cover),
-                  ),
-                ),
-              ],
-            )),
-        const SizedBox(
-          height: 15,
-        ),
+    return ChangeNotifierProvider(
+      create: (context) => MyProviderSebha(),
+      builder: (context, child) {
+        var pro = Provider.of<MyProviderSebha>(context);
+        return Column(
+          children: [
+            SizedBox(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.36,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Positioned(
+                        top: 1,
+                        right: 140,
+                        child: provider.isDark()
+                            ? Image.asset(
+                                'assets/images/head_seb7a_dark.png',
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset(
+                                'assets/images/head_sebha_icon.png',
+                                fit: BoxFit.cover,
+                              )),
+                    InkWell(
+                      onTap: pro.incrementCounter,
+                      child: AnimatedRotation(
+                        duration: const Duration(milliseconds: 65),
+                        turns: pro.turn,
+                        child: provider.isDark()
+                            ? Image.asset('assets/images/body_seb7a_dark.png',
+                                fit: BoxFit.cover)
+                            : Image.asset('assets/images/sebha_icon.png',
+                                fit: BoxFit.cover),
+                      ),
+                    ),
+                  ],
+                )),
+            const SizedBox(
+              height: 15,
+            ),
         Text(
-          AppLocalizations.of(context)!.number_of_Tasbeehs,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
+              AppLocalizations.of(context)!.number_of_Tasbeehs,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
         const SizedBox(
-          height: 15,
-        ),
+              height: 15,
+            ),
         Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-            vertical: MediaQuery.of(context).size.height * 0.02,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: provider.isDark()
-                ? ColorApp.kyellowColor
-                : ColorApp.kPrimryeColor.withOpacity(0.6),
-          ),
-          child: Text(
-            '$counter',
-            style: provider.isDark()
-                ? Theme.of(context)
-                    .textTheme
-                    .displayLarge!
-                    .copyWith(color: ColorApp.kBlackColor)
-                : Theme.of(context).textTheme.displayLarge,
-          ),
-        ),
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.05,
+                vertical: MediaQuery.of(context).size.height * 0.02,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: provider.isDark()
+                    ? ColorApp.kyellowColor
+                    : ColorApp.kPrimryeColor.withOpacity(0.6),
+              ),
+              child: Text(
+                '${pro.counter}',
+                style: provider.isDark()
+                    ? Theme.of(context)
+                        .textTheme
+                        .displayLarge!
+                        .copyWith(color: ColorApp.kBlackColor)
+                    : Theme.of(context).textTheme.displayLarge,
+              ),
+            ),
         const SizedBox(height: 15),
         InkWell(
-          onTap: incrementCounter,
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.05,
-              vertical: MediaQuery.of(context).size.height * 0.02,
+              onTap: pro.incrementCounter,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                  vertical: MediaQuery.of(context).size.height * 0.02,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: provider.isDark()
+                      ? ColorApp.kyellowColor
+                      : ColorApp.kPrimryeColor.withOpacity(0.6),
+                ),
+                child: Text(
+                  pro.phrases[pro.phraseIndex],
+                  style: provider.isDark()
+                      ? Theme.of(context).textTheme.displayLarge!.copyWith(
+                            color: ColorApp.kBlackColor,
+                          )
+                      : Theme.of(context).textTheme.displayLarge,
+                ),
+              ),
             ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: provider.isDark()
-                  ? ColorApp.kyellowColor
-                  : ColorApp.kPrimryeColor.withOpacity(0.6),
-            ),
-            child: Text(
-              phrases[phraseIndex],
-              style: provider.isDark()
-                  ? Theme.of(context).textTheme.displayLarge!.copyWith(
-                        color: ColorApp.kBlackColor,
-                      )
-                  : Theme.of(context).textTheme.displayLarge,
-            ),
-          ),
-        ),
         const SizedBox(height: 30),
-      ],
+          ],
+        );
+      },
     );
   }
 }
