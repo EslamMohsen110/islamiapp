@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Text(
               AppLocalizations.of(context)!.bar_title,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(

@@ -51,7 +51,7 @@ class _QuranScreenState extends State<QuranScreen> {
         appBar: AppBar(
           title: Text(
             arges.txt,
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         body: Container(

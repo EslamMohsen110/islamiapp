@@ -21,7 +21,7 @@ class ItemQuranName extends StatelessWidget {
       child: Text(
         title,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.titleSmall,
+        style: Theme.of(context).textTheme.displayLarge,
       ),
     );
   }

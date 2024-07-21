@@ -74,7 +74,7 @@ class _SebhaTabState extends State<SebhaTab> {
         ),
         Text(
           AppLocalizations.of(context)!.number_of_Tasbeehs,
-          style: Theme.of(context).textTheme.bodySmall,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         const SizedBox(
           height: 15,
@@ -95,14 +95,12 @@ class _SebhaTabState extends State<SebhaTab> {
             style: provider.isDark()
                 ? Theme.of(context)
                     .textTheme
-                    .bodySmall!
+                    .displayLarge!
                     .copyWith(color: ColorApp.kBlackColor)
-                : Theme.of(context).textTheme.bodySmall,
+                : Theme.of(context).textTheme.displayLarge,
           ),
         ),
-        const SizedBox(
-          height: 15,
-        ),
+        const SizedBox(height: 15),
         InkWell(
           onTap: incrementCounter,
           child: Container(
@@ -119,17 +117,14 @@ class _SebhaTabState extends State<SebhaTab> {
             child: Text(
               phrases[phraseIndex],
               style: provider.isDark()
-                  ? Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(color: ColorApp.kBlackColor)
-                  : Theme.of(context).textTheme.bodySmall,
+                  ? Theme.of(context).textTheme.displayLarge!.copyWith(
+                        color: ColorApp.kBlackColor,
+                      )
+                  : Theme.of(context).textTheme.displayLarge,
             ),
           ),
         ),
-        const SizedBox(
-          height: 30,
-        ),
+        const SizedBox(height: 30),
       ],
     );
   }

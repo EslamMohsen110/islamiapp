@@ -13,31 +13,21 @@ class ThemeMod {
       backgroundColor: Colors.transparent,
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(
+      headlineLarge: TextStyle(
         color: ColorApp.kBlackColor,
         fontSize: 30,
-        fontWeight: FontWeight.w700,
+        fontFamily: 'ElMessiri',
       ),
-      bodyMedium: TextStyle(
-        color: ColorApp.kBlackColor,
-        fontSize: 30,
-        fontWeight: FontWeight.w400,
-      ),
-      bodySmall: TextStyle(
+      headlineMedium: TextStyle(
         color: ColorApp.kBlackColor,
         fontSize: 25,
-        fontWeight: FontWeight.w600,
+        fontFamily: 'ElMessiri',
       ),
-      titleSmall: TextStyle(
-        color: ColorApp.kBlackColor,
-        fontSize: 25,
-        fontWeight: FontWeight.w400,
-      ),
-      labelSmall: TextStyle(
-        color: ColorApp.kBlackColor,
-        fontSize: 26,
-        fontWeight: FontWeight.w400,
-      ),
+      displayLarge: TextStyle(
+          color: ColorApp.kBlackColor,
+        fontSize: 25, fontFamily: 'Zain'),
+      displayMedium: TextStyle(
+          color: ColorApp.kBlackColor, fontSize: 20, fontFamily: 'Zain'),
     ),
   );
   static final ThemeData darkTheme = ThemeData(
@@ -52,31 +42,20 @@ class ThemeMod {
       backgroundColor: Colors.transparent,
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(
+      headlineLarge: TextStyle(
         color: ColorApp.kWhiteColor,
         fontSize: 30,
-        fontWeight: FontWeight.w700,
+        fontFamily: 'ElMessiri',
       ),
-      bodyMedium: TextStyle(
-        color: ColorApp.kWhiteColor,
-        fontSize: 30,
-        fontWeight: FontWeight.w400,
-      ),
-      bodySmall: TextStyle(
+      headlineMedium: TextStyle(
         color: ColorApp.kWhiteColor,
         fontSize: 25,
-        fontWeight: FontWeight.w600,
+        fontFamily: 'ElMessiri',
       ),
-      titleSmall: TextStyle(
-        color: ColorApp.kWhiteColor,
-        fontSize: 25,
-        fontWeight: FontWeight.w400,
-      ),
-      labelSmall: TextStyle(
-        color: ColorApp.kWhiteColor,
-        fontSize: 26,
-        fontWeight: FontWeight.w400,
-      ),
+      displayLarge: TextStyle(
+          color: ColorApp.kWhiteColor, fontSize: 25, fontFamily: 'Zain'),
+      displayMedium: TextStyle(
+          color: ColorApp.kWhiteColor, fontSize: 20, fontFamily: 'Zain'),
     ),
   );
 }

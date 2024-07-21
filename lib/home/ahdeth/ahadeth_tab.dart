@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islamii_aapp/home/ahdeth/item_ahadeth_name.dart';
-import '../../color/color_app.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamii_aapp/home/ahdeth/item_ahadeth_name.dart';
+
+import '../../color/color_app.dart';
 
 class AhadethTab extends StatefulWidget {
   static const String routeName = 'AhadethTab';
@@ -49,7 +50,7 @@ class _AhadethTabState extends State<AhadethTab> {
         ),
         Text(
           AppLocalizations.of(context)!.ahadeth,
-          style: Theme.of(context).textTheme.bodySmall,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Divider(
           color: ColorApp.kPrimryeColor,

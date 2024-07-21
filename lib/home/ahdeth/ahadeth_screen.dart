@@ -34,7 +34,7 @@ class AhadethScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             aragesHadeth.title,
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         body: Container(

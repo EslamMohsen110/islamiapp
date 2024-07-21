@@ -11,7 +11,7 @@ class ItemAhadethScreen extends StatelessWidget {
       content,
       textDirection: TextDirection.rtl,
       textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.labelSmall,
+      style: Theme.of(context).textTheme.displayLarge,
     );
   }
 }
